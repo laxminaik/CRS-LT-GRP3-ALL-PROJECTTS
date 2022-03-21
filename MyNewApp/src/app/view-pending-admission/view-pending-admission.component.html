@@ -1,0 +1,51 @@
+<style>table, th, td {
+  border: 1px solid black;
+} 
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+<table> 
+<table> 
+    <!-- <th colspan="4" style="background-color:#9290AC;">Pedding Admissions</th> -->
+  <tr>
+    <th>Student Id</th>
+    
+     <th>Branch Name</th>
+     <th>Batch</th>
+     <th>isApproved</th>
+     <th>isRegistered</th>
+     <th>Approve</th>
+     <!-- <th>isRegisterd</th> -->
+  </tr>
+  
+    <tr *ngFor="let student of getData">
+      <td align="center">{{student.studentId}}</td>
+      <td align="center">{{student.branchName}}</td>
+      <td align="center">{{student.batch}}</td>
+      <td align="center">{{student.isApproved}}</td>
+      <td align="center">{{student.isRegistered}}</td>
+      <td align="center"> 
+        <button type="submit" (click)="approveStudent(student.studentId)" class="button">
+          Approve Student</button>
+    </td>
+    <!-- <td>{{student.isRegisterd}}</td> -->
+   
+
+
+  </tr>
+  
+
+</table>

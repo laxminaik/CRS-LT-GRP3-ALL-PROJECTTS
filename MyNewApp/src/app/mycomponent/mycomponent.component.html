@@ -1,0 +1,83 @@
+<p>mycomponent works!</p>
+<div>
+<form #userPost="ngForm"  novlidate>
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+    required
+    [(ngModel)]="model.name" name="name">
+    </div>
+    
+    <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age"
+    [(ngModel)]="model.age" name="age">
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click) ="onSubmit()">Submit</button>
+    <button type="submit"(click)="getUser()" class="btn btn-danger">Get all the usersList</button>
+    </form>
+
+      
+       
+       <div>
+      
+           
+        <table class="table">
+         <thead>
+           <tr>
+            
+             <th scope="col">Name</th>
+             <th scope="col">Age</th>
+             <th colspan="2">Actions</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let user of getData; let indexValue=index">
+               
+            <td>
+                {{user.name  }}
+            </td>
+            <td>{{user.age }}</td>
+            <td> <button type="submit" class="btn btn-primary" (click)=" editCustomer(user.id)">Edit</button></td>
+            <td><button type="submit" class="btn btn-primary" (click)=" deleteRow(user.id)">Delete</button></td>
+              </tr>
+       
+         </tbody>
+       </table>
+       <span *ngIf="noRecords">No records found!</span>
+
+<table *ngIf="updateNeeded" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+        <td>
+            <!-- <label for="name">Name</label> -->
+            <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name">
+        </td>
+        <td>
+            <!-- <label for="age">Age</label> -->
+            <input type="text" class="form-control" id="age" required [(ngModel)]="age" name="age">
+        </td>
+        <td><button type="submit" class="btn btn-primary" (click)=" updateRow()">Update</button></td>
+    </tr>
+    </tbody>
+</table>
+ 
+    <!-- <div>
+      <ol>
+          <li *ngFor='let user of getData'>
+          {{ user.name}}<b>||</b> {{user.age}}
+          </li>
+       </ol>
+    </div> -->
+   
+ </div>
+</div>
+
+   

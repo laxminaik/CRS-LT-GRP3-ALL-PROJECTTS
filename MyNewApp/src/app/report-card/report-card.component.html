@@ -1,0 +1,45 @@
+<style>table, th, td {
+    border: 1px solid black;
+  } </style>
+  
+  <!-- <div>
+    <form #userPost14="ngForm"  novlidate>
+        <div class="form-group">
+        <label for="studentId">Student Id</label>
+        <input type="text" class="form-control" id="studentId"
+        required
+        [(ngModel)]="model.studentId" name="studentId">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" (click) ="reportCard(this.model)"> Submit </button>
+      
+        </form>
+        </div> -->
+
+
+
+  <table> 
+      <!-- <th colspan="4" style="background-color:#9290AC;">Pedding Admissions</th> -->
+    <tr>
+      <th>student Id</th>
+      
+       <th>course Code</th>
+       <th>grade</th>
+       
+       <!-- <th>isRegisterd</th> -->
+    </tr>
+    
+      <tr *ngFor="let RegisteredCourse of getData">
+        <td align="center">{{RegisteredCourse.studentId}}</td>
+        <td align="center">{{RegisteredCourse.courseCode}}</td>
+        <td align="center">{{RegisteredCourse.grade}}</td>
+        
+         
+      <!-- <td>{{student.isRegisterd}}</td> -->
+     
+  
+  
+    </tr>
+    
+  
+  </table>

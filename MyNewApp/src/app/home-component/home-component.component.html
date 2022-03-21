@@ -1,0 +1,32 @@
+<p>mycomponent works!</p>
+<div>
+<form #userPost1="ngForm"  novlidate>
+    <div class="form-group">
+    <label for="courseCode">course Code</label>
+    <input type="text" class="form-control" id="courseCode"
+    required
+    [(ngModel)]="model.courseCode" name="courseCode">
+    </div>
+    
+    <div class="form-group">
+    <label for="courseName">course Name</label>
+    <input type="text" class="form-control" id="courseName"
+    [(ngModel)]="model.courseName" name="courseName">
+    </div>
+
+    <div class="form-group">
+        <label for="instructorId">instructor Id</label>
+        <input type="text" class="form-control" id="instructorId"
+        required
+        [(ngModel)]="model.instructorId" name="instructorId">
+        </div>
+        
+        <div class="form-group">
+        <label for="availableSeats">available Seats</label>
+        <input type="number" class="form-control" id="availableSeats"
+        [(ngModel)]="model.availableSeats" name="availableSeats">
+        </div>
+    
+    <button type="submit" class="btn btn-primary" (click) ="addCourse(this.model)"> Submit </button>
+  
+    </form>

@@ -1,0 +1,28 @@
+<p>professor component works!</p>
+<div>
+<form #userPost2="ngForm"  novlidate>
+    <div class="form-group">
+    <label for="professorID">Professor Id</label>
+    <input type="text" class="form-control" id="professorID"
+    required
+    [(ngModel)]="model.professorID" name="professorID">
+    </div>
+    
+    <div class="form-group">
+    <label for="department">Department</label>
+    <input type="text" class="form-control" id="department"
+    [(ngModel)]="model.department" name="department">
+    </div>
+
+    <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation"
+        required
+        [(ngModel)]="model.designation" name="designation">
+        </div>
+        
+        
+    
+    <button type="submit" class="btn btn-primary" (click) ="addProfessor(this.model)"> Submit </button>
+  
+    </form>

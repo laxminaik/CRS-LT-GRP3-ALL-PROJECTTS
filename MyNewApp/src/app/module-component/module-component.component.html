@@ -1,0 +1,27 @@
+<style>table, th, td {
+  border: 1px solid black;
+} </style>
+<table>  
+
+  <!-- <th colspan="4" style="background-color:#9290AC;">Courses</th> -->
+  <tr>
+    <th>Course Code</th>
+    <th>Course Name</th>
+    <th>Instructor Id</th>
+    <th>Available Seats</th>
+    <th>Delete Course</th>
+  </tr>
+
+  <tr *ngFor="let course of getData ; let i=index">
+    <td align="center">{{course.courseCode}}</td>
+    <td align="center">{{course.courseName}}</td>
+    <td align="center">{{course.instructorId}}</td>
+    <td align="center">{{course.availableSeats}}</td>
+    
+    
+    <td> <button type="submit" (click)="deleteCourse(course.courseCode)" class="btn btn-danger">Delete Course</button>
+    </td>
+  </tr>
+
+
+</table>
